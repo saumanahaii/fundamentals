@@ -13,7 +13,7 @@
 .bob{
   align-self: center;
     width: 15rem;
-    animation: MoveUpDown 5s ease-in-out infinite;
+    animation: MoveUpDown 7s ease-in-out infinite;
 }
 
 .bowlContainer{
@@ -39,7 +39,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(1em);
+    transform: translateY(0.7em);
   }
   100% {
     transform: translateY(0);

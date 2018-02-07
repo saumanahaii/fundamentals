@@ -1,0 +1,49 @@
+<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+<div id="printBox"></div>
+
+<script>
+    //10print is a famous program originally written in Basic.  It is incredibly simple, but the effect is fantastic.
+    //This is an implementation of it using a monospace font and shrunk kerning/line-spacing.
+
+    //some housekeeping first: lets make the font bigger and get rid of some spacing!  And change the background color.
+    $("#printBox").css("font-size", "2rem");
+    $("#printBox").css("letter-spacing", "-0.75rem");
+    //Note the monospace here.  That means that every character takes up the same amount of space.  This wouldn't work
+    //without it.  Go ahead and try it!  double slashes stack closer together in non-monospace fonts.
+    $("#printBox").css("font-family", "monospace");
+    $("#printBox").css("line-height", "1.6rem");
+    $("#printBox").css("background", "rgb(50,50,50)");
+
+    //first, we need a really long string.  Lets generate one!
+    if(typeof str !== "undefined"){
+        let str;
+    }
+    //I'm also going to have a character array, which lets us choose our character and lets you set your own.
+    //notice the double backslash.  That's because the backslash is an escape character!
+    //You use it to render characters that would otherwise get interpreted by our code.
+    //Funnily enough, the character we're escaping happens to be the character used to escape.
+    if(typeof characterArray !== "undefined"){
+        let characterArray;
+    }
+
+    //it might seem odd that I did that above, but because of how the app is running I want to make sure that
+    //I'm not redeclaring variables that already exist.
+    str = "";
+    characterArray = ["/", "\\"];
+
+    for(let i=0; i<8000;i++){
+        //now we need to choose a character!  This looks daunting, but we'll break it down.
+        let char = Math.floor(Math.random()*characterArray.length);
+        //normally I'd do this all in one line, but that bit above is long enough to be broken out.
+        //So now we set char to the characterArray value of char!  Remember: the right side gets evaluated first.
+        char = characterArray[char];
+
+        //Then we add that character onto the string!
+        str += char + " ";
+    }
+    //double checking it is working.  Uncomment the next line if you want to see the output there.
+    console.log(str);
+    //notice the style tag.  Because I decided to use the pre tag to show that it is preformatted,
+    //I needed to reference the font here.
+    $("#printBox").html("<span>" + str + "</span>")
+</script>
