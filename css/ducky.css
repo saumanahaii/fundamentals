@@ -1,0 +1,47 @@
+#frame{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../img/small-crackle-bright.png");
+}
+
+#frame p{
+  text-align: center;
+  align-self: center;
+  max-width: 40rem;
+}
+
+.bob{
+  align-self: center;
+    width: 15rem;
+    animation: MoveUpDown 5s ease-in-out infinite;
+}
+
+.bowlContainer{
+
+  align-self: center;
+  height: 20rem;
+  overflow: hidden;
+  transform: translateY(-5em);
+  max-height: 14rem;
+}
+
+#bowl{
+  display: inline-block;
+  width: 20rem;
+  height: 20rem;
+  transform: translateY(-5em);
+  background: rgba(100,255,100,0.3);
+  border-radius: 100%;
+}
+
+@keyframes MoveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(1em);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

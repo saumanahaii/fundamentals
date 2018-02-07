@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative|Forum|Overlock|Poiret+One|Raleway|Share');
+
+html{
+    height: 100%;
+    font-size: 16px;
+}
+
+body{
+
+}
+
+
+body{
+    margin: 0;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    /* font-family: 'Poiret One', cursive;*/
+    /* font-family: 'Forum', cursive;*/
+    /* font-family: 'Share', cursive;*/
+    /* font-family: 'Overlock', cursive; */
+    /* font-family: 'Cinzel Decorative', cursive; */
+    font-family: 'Raleway', sans-serif;
+}
+
+#header{
+    border-bottom: 7px solid rgba(0,0,0,0.5);
+    background: #444;
+    color: #eee;
+    text-shadow: 1px 1px 4px black, -1px -1px 4px black;
+}
+
+#header h1 {
+    margin: 0;
+    padding: 0.3rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#header h2 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    display: none;
+}
+
+#main{
+    display: flex;
+    flex: 1;
+}
+
+#list{
+    background: #bbb;
+    flex: 1;
+}
+
+#frame{
+    flex: auto;
+    text-align: center;
+
+}
+
+.headerContainer{
+    text-align: center;
+}
+
+
+
+.parentList, .childList{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.childList li {
+    background: #aaa;
+}
+
+
+
+@media (min-width: 640px){
+
+    #header{
+        display:flex;
+        justify-content: space-between;
+
+        font-family: 'Poiret One', cursive;
+        /* font-family: 'Forum', cursive; */
+        /* font-family: 'Share', cursive; */
+        /* font-family: 'Overlock', cursive; */
+        /* font-family: 'Cinzel Decorative', cursive; */
+        /* font-family: 'Raleway', sans-serif; */
+    }
+
+    #header h1 {
+        margin: 0.2em;
+    }
+
+    #header h2 {
+        margin: 0.2em;
+        display: inline-flex;
+    }
+
+    #list{
+        max-width: 12rem;
+        border-right: 5px solid rgba(0,0,0,0.5);
+        min-height: 100%;
+    }
+
+    #togglePanel, #togglePanelLabel{
+        display: none;
+    }
+
+
+    .headerContainer{
+
+        padding-left: 1em;
+        padding-right: 1em;
+        text-align: center;
+        align-self: center;
+
+    }
+
+    .childList  > * {
+        padding: 0.2em;
+        padding-left: 0.5em;
+    }
+
+}

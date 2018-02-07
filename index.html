@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Javascript Code Examples</title>
+        <link rel="stylesheet" href="./css.css">
+        <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id='header' class='borderBottom'>
+            <div class='headerContainer floatLeft'>
+                <h1>Javascript Code Examples</h1>
+            </div>
+            <div class='headerContainer floatRight'>
+                <h2>By Zach Williams</h2>
+            </div>
+        </div>
+        <div id="main">
+            <div id="list">
+                <label id="togglePanelLabel" for="togglePanel">Toggle</label>
+                <input id="togglePanel" type="checkbox"></input>
+                <ul class="parentList">
+                    <li class="childList">
+                        <ul >
+                            <label>Helpful Stuff</label>
+                            <li><a href="./examples/utilities/rubberDucky.html">Virtual Rubber Ducky</a></li>
+                        </ul>
+                        <ul >
+                            <label>Arrays</label>
+                            <li><a href="./examples/arrays/background.html">Colors from Array</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="frame">
+            </div>
+        </div>
+    </body>
+    <script src="./app.js"></script>
+</html>

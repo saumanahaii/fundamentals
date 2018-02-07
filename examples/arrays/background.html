@@ -1,0 +1,46 @@
+<h1>Changing colors with an array</h1>
+<div id="backgroundBox"></div>
+<p>The colors are in a variable called 'arr'.  Feel free to reassign it to whatever colors you want!</p>
+<p>The current array is ' ["white", "lightgray", "darkgray", "black", "rgb(50,50,50)", "rgb(150,150,150)", ] '
+<p>Ttry passing in this to your console: ' arr=["red", "green"] '! </p>
+<script>
+    //this is our color array!  Change whatever you want.
+    let arr = ["white", "lightgray", "darkgray", "black", "rgb(50,50,50)", "rgb(150,150,150)", ];
+    //I've set a loop counter which will act as the index of our array.
+    //I pass this into ' arr ' to get the color at that index.
+    //I set it to 1 because I'm actually setting the first color manually down below.
+    let index = 1;
+    //These next lines simply set the css of the box using jQuery.
+    //You totally could have done this with CSS, and I probably should have,
+    //but this trick can come in handy to remember so I've included it here.
+    $("#backgroundBox").css("flex-grow", "1");
+    $("#backgroundBox").css("height", "20rem");
+    $("#backgroundBox").css("border", "0.1rem solid black");
+
+    //this line goes ahead and sets the box's color to the first element of the array.
+    //I did this because using setInterval like this means that the code won't trigger until the first interval is complete.
+    //That would leave it looking white for two intervals, which isn't great!
+    $("#frame").css("background", arr[0]);
+    //this
+    let interval = setInterval(()=>{
+        //this checks if the element exists!  Intervals will keep repeating forever unless you tell them to stop.  That's what this does.
+        if($("#backgroundBox").length === 0){
+            clearInterval(interval);
+        }
+        //uncomment this if you want to see the interval function print the current color!
+        // console.log(arr[index])
+
+        //this line sets the color of the box to the value fetched from the array.
+        $("#backgroundBox").css("background", arr[index]);
+
+        //This looks complicated, but it is a really cool compact form of an if/else conditional!
+        //It is called a ternary and I love them.  The format goes like this:
+        //  conditional ? codeIfTrue : codeIfFalse;
+        //the conditional means that it needs to be true or false.  I feed in a greater-than or equal-to, which returns true/false
+        //I'm also setting the ternary operation to index, so the code I pass in is simply a value, either 0 or the next index
+        index = index >= arr.length -1 ? 0 : index + 1;
+
+    },500)
+    //We're setting the style here since you can input your own colors!
+
+</script>
