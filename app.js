@@ -3,7 +3,7 @@ let hash = location.hash;
 if(hash.length>0){
   //navigate to hash
   console.log(location.hash.slice(1))
-  $("#frame").load(location.hash.slice(1));
+  $("#frame").load("./" + location.hash.slice(1));
 }else{
   console.log("nope");
 }
@@ -16,6 +16,6 @@ $(".parentList").on("click", "a", event => {
     console.log(href);
     //now we need to load that page into the frame id'ed div.
     $("#frame").load(href);
-    location.hash = href;
+    location.hash = href.slice(2);
 
 })
